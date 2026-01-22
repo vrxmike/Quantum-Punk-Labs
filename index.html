@@ -119,7 +119,7 @@
             font-size: clamp(2.5rem, 8vw, 4.5rem);
             margin-bottom: 0.5rem;
             color: white;
-            text-shadow: 0 0 30px rgba(0, 242, 255, 0.4);
+            /* text-shadow handled by animation */
         }
 
         .hero-tagline {
@@ -353,6 +353,21 @@
         }
         ::-webkit-scrollbar-thumb:hover {
             background: var(--primary-neon);
+        }
+
+        @keyframes neon-flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(0, 242, 255, 0.6);
+            }
+            20%, 24%, 55% {
+                opacity: 0.5;
+                text-shadow: none;
+            }
+        }
+
+        .logo-text, header h1 {
+            animation: neon-flicker 3s infinite alternate;
         }
     </style>
 </head>
