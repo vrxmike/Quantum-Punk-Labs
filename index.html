@@ -375,24 +375,9 @@
                 font-size: 1.5rem;
             }
 
-            /* Horizontal Scroll (Carousel) for Cards */
+            /* Vertical Stack for Cards */
             .grid {
-                display: flex;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                gap: 1.5rem;
-                padding-bottom: 2rem; /* Space for scrollbar/swipe */
-                scrollbar-width: none; /* Firefox */
-            }
-
-            .grid::-webkit-scrollbar {
-                display: none; /* Chrome/Safari */
-            }
-
-            .card {
-                min-width: 85vw; /* Show mostly one card */
-                scroll-snap-align: center;
-                flex-shrink: 0;
+                grid-template-columns: 1fr;
             }
 
             .section-padding { padding: 80px 5%; }
